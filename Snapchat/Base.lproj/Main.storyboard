@@ -89,17 +89,160 @@
                     <connections>
                         <outlet property="emailTextField" destination="fCX-Jm-qOi" id="EGH-eb-ynY"/>
                         <outlet property="passwordTextField" destination="Clp-Nb-SK3" id="3T1-6K-Wi3"/>
+                        <segue destination="j8P-am-F6k" kind="presentation" identifier="iniciarsesionsegue" id="qXW-NL-D3S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="20" y="42"/>
         </scene>
+        <!--Snaps View Controller-->
+        <scene sceneID="y3O-8O-X9E">
+            <objects>
+                <viewController id="cPX-4e-2Eo" customClass="SnapsViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8SH-bK-OU2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="unm-7G-wfV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IdY-20-nml">
+                        <barButtonItem key="leftBarButtonItem" title="Cerrar sesion" id="smd-RR-qmL">
+                            <connections>
+                                <action selector="cerrarSesionTapped:" destination="Yci-9k-f18" id="G0y-Jg-SkN"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="+" id="Kt9-jy-bn7">
+                            <connections>
+                                <segue destination="tm5-vY-hgb" kind="show" id="GwP-Ux-EXp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BXQ-1y-7aa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Yci-9k-f18" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1543" y="42"/>
+        </scene>
+        <!--Enviar Mensaje-->
+        <scene sceneID="YHU-Ye-LkM">
+            <objects>
+                <viewController id="tm5-vY-hgb" customClass="ImagenViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gpI-ON-R03">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ll9-uO-46F">
+                                <rect key="frame" x="87" y="76" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="MJ4-EA-erC"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descripcion..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v2B-kF-GwG">
+                                <rect key="frame" x="87" y="220" width="240" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="descripcionTextField:" destination="tm5-vY-hgb" eventType="editingDidEnd" id="ANU-Sf-5HJ"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohj-tr-8NJ">
+                                <rect key="frame" x="87" y="275" width="240" height="31"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="krS-DA-TDn"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Elegir contacto">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="elegirContactoTapped:" destination="tm5-vY-hgb" eventType="touchUpInside" id="b9A-qJ-c7d"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Oo2-0a-5uV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="v2B-kF-GwG" firstAttribute="width" secondItem="Ll9-uO-46F" secondAttribute="width" multiplier="0.404167" constant="143" id="2t6-rC-Kgl"/>
+                            <constraint firstItem="Oo2-0a-5uV" firstAttribute="bottom" secondItem="Ll9-uO-46F" secondAttribute="bottom" constant="604" id="3IO-1r-iif"/>
+                            <constraint firstItem="v2B-kF-GwG" firstAttribute="leading" secondItem="Ll9-uO-46F" secondAttribute="leading" id="6ap-Lq-0wN"/>
+                            <constraint firstItem="Ll9-uO-46F" firstAttribute="top" secondItem="Oo2-0a-5uV" secondAttribute="top" constant="20" id="8jZ-xP-rjd"/>
+                            <constraint firstItem="Ohj-tr-8NJ" firstAttribute="leading" secondItem="v2B-kF-GwG" secondAttribute="leading" id="SIU-Te-JCi"/>
+                            <constraint firstItem="v2B-kF-GwG" firstAttribute="top" secondItem="Ll9-uO-46F" secondAttribute="bottom" constant="16" id="bal-eZ-T2Z"/>
+                            <constraint firstItem="Ohj-tr-8NJ" firstAttribute="width" secondItem="v2B-kF-GwG" secondAttribute="width" id="h07-GH-QzI"/>
+                            <constraint firstItem="Ohj-tr-8NJ" firstAttribute="top" secondItem="v2B-kF-GwG" secondAttribute="bottom" constant="21" id="kfN-H7-Kpg"/>
+                            <constraint firstItem="Ll9-uO-46F" firstAttribute="centerX" secondItem="gpI-ON-R03" secondAttribute="centerX" id="ojH-ox-dLL"/>
+                            <constraint firstItem="Ohj-tr-8NJ" firstAttribute="trailing" secondItem="v2B-kF-GwG" secondAttribute="trailing" id="sSB-b6-yC5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Enviar Mensaje" id="pYy-et-4eF">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="camera" id="u3T-nk-mTx">
+                            <connections>
+                                <action selector="camaraTapped:" destination="tm5-vY-hgb" id="jbO-b9-lzb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descripcionTextField" destination="v2B-kF-GwG" id="gGB-OF-OKv"/>
+                        <outlet property="elegirContactoBoton" destination="Ohj-tr-8NJ" id="jsE-vf-WlT"/>
+                        <outlet property="imageView" destination="Ll9-uO-46F" id="5kF-0C-7Nm"/>
+                        <segue destination="tgQ-0s-0Ml" kind="show" identifier="seleccionarContactoSegue" id="N2n-S6-QgO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G2d-i1-KlH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2255.072463768116" y="41.517857142857139"/>
+        </scene>
+        <!--Lista de Usuarios-->
+        <scene sceneID="fPQ-mV-kHr">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="tgQ-0s-0Ml" customClass="ElegirUsuarioViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="n9P-vW-5ss">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Lista de Usuarios" id="vso-s2-gFb"/>
+                    <connections>
+                        <outlet property="listaUsuarios" destination="n9P-vW-5ss" id="WHj-cv-9D0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f0g-Cp-TYw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2967" y="42"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aQm-7b-7K2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j8P-am-F6k" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J8X-8E-GH4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cPX-4e-2Eo" kind="relationship" relationship="rootViewController" id="7ue-aW-Lad"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fvp-SS-bEL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="42"/>
+        </scene>
     </scenes>
     <resources>
         <image name="contrasena (1).png" width="200" height="70"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
